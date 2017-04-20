@@ -6,6 +6,8 @@ import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.remote.*;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.support.ui.Select;
@@ -25,7 +27,14 @@ public class TutuTest {
         FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
         FirefoxProfile firefoxProfile = new FirefoxProfile();
         driver = new FirefoxDriver(ffBinary,firefoxProfile);
-    } else driver = new FirefoxDriver();
+    }
+    else {
+      ChromeOptions options = new ChromeOptions();
+      options.addArguments("load-extension=C:/Users/Fedor/Documents/itmo-java-unit-testing-3/lib/uBlock0.chromium");
+      DesiredCapabilities capabilities = new DesiredCapabilities();
+      capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+      driver = new ChromeDriver(capabilities);
+    }
 
     baseUrl = "https://www.tutu.ru/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
