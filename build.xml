@@ -18,7 +18,14 @@
   </target>
 
   <target name="test" depends="compile">
+    <condition property="os" value="windows">
+      <os family="windows" />
+    </condition>
+    <condition property="os" value="linux">
+      <os family="unix" />
+    </condition>
     <junit fork="true">
+      <env key="PATH" path="${env.PATH}:${basedir}/lib/${os}"/>
       <classpath>
         <path refid="classpath.test"/>
       </classpath>
