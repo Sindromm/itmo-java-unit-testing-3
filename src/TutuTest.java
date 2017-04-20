@@ -1,10 +1,13 @@
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
+import java.io.File;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.support.ui.Select;
 
 public class TutuTest {
@@ -15,7 +18,15 @@ public class TutuTest {
 
   @Before
   public void setUp() throws Exception {
-    driver = new FirefoxDriver();
+    String os = System.getProperty("os.name");
+    System.out.println(os);
+    if (os.equals("Linux")) {
+        File pathToBinary = new File("/usr/bin/firefox");
+        FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
+        FirefoxProfile firefoxProfile = new FirefoxProfile();
+        driver = new FirefoxDriver(ffBinary,firefoxProfile);
+    } else driver = new FirefoxDriver();
+
     baseUrl = "https://www.tutu.ru/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
