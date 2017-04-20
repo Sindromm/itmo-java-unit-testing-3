@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.support.ui.Select;
 
-public class TutuTest {
+public class RegisterTest {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -21,7 +21,6 @@ public class TutuTest {
   @Before
   public void setUp() throws Exception {
     String os = System.getProperty("os.name");
-    System.out.println(os);
     if (os.equals("Linux")) {
         File pathToBinary = new File("/usr/bin/firefox");
         FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
@@ -30,7 +29,7 @@ public class TutuTest {
     }
     else {
       ChromeOptions options = new ChromeOptions();
-      options.addArguments("load-extension=C:/Users/Fedor/Documents/itmo-java-unit-testing-3/lib/uBlock0.chromium");
+ //     options.addArguments("load-extension=C:/Users/Fedor/Documents/itmo-java-unit-testing-3/lib/uBlock0.chromium");
       DesiredCapabilities capabilities = new DesiredCapabilities();
       capabilities.setCapability(ChromeOptions.CAPABILITY, options);
       driver = new ChromeDriver(capabilities);
@@ -47,6 +46,33 @@ public class TutuTest {
     driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[4]/div/div[2]/div[2]")).click();
     driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[4]/div/div[3]/div[2]")).click();
   }
+
+  @Test
+  public void testRegister() throws Exception {
+    driver.get(baseUrl + "/");
+    driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[1]/div/div[2]/div[1]/div[3]/div/div/div/div[1]/div/div/a")).click();
+    for (int second = 0;; second++) {
+      if (second >= 60) fail("timeout");
+      try { if (isElementPresent(By.xpath("//div[@class='reg_wrp j-auth-register s-active']/div/div[1]/div[1]/form/input[2]"))) break; } catch (Exception e) {}
+      Thread.sleep(1000);
+    }
+    
+    String email = "javaTestLab+" +  Math.floor(Math.random()*11111) + "@yopmail.com";
+    driver.findElement(By.xpath("//div[@class='reg_wrp j-auth-register s-active']/div/div[1]/div[1]/form/input[2]")).sendKeys(email);
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//div[@class='reg_wrp j-auth-register s-active']/div/div[1]/div[1]/form/div[3]/button")).click();
+    Thread.sleep(2000);
+    driver.navigate().refresh();
+    try {
+      assertTrue(driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[1]/div/div[2]/div[1]/div[3]/div/div/div/div[2]/div/div/a")).getText().matches("^javaTestLab[\\s\\S]*yopmail\\.com$"));
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[1]/div/div[2]/div[1]/div[3]/div/div/div/div[2]/div/a")).click();
+    Thread.sleep(2000);
+  }
+
 
   @After
   public void tearDown() throws Exception {
