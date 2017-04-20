@@ -31,10 +31,6 @@ public class RegisterTest {
     }
     else {
       ChromeOptions options = new ChromeOptions();
-<<<<<<< Updated upstream
-      options.addArguments("load-extension=C:/Users/Fedor/Documents/itmo-java-unit-testing-3/lib/uBlock0.chromium");
-=======
->>>>>>> Stashed changes
       DesiredCapabilities capabilities = new DesiredCapabilities();
       capabilities.setCapability(ChromeOptions.CAPABILITY, options);
       driver = new ChromeDriver(capabilities);
