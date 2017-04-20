@@ -31,7 +31,7 @@ public class RegisterTest {
     }
     else {
       ChromeOptions options = new ChromeOptions();
- //     options.addArguments("load-extension=C:/Users/Fedor/Documents/itmo-java-unit-testing-3/lib/uBlock0.chromium");
+      options.addArguments("load-extension=C:/Users/Fedor/Documents/itmo-java-unit-testing-3/lib/uBlock0.chromium");
       DesiredCapabilities capabilities = new DesiredCapabilities();
       capabilities.setCapability(ChromeOptions.CAPABILITY, options);
       driver = new ChromeDriver(capabilities);

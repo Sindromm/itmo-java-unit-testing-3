@@ -43,11 +43,12 @@ public class TutuFlightTest {
   @Test
   public void testTutuFlight() throws Exception {
     driver.get(baseUrl + "/");
-    driver.findElement(By.xpath("//html/body/div[2]/div[5]/div/div[1]/div[2]/div[2]/div[1]/div[2]/span[1]")).click();
-    driver.findElement(By.xpath("//html/body/div[2]/div[5]/div/div[1]/div[2]/div[2]/div[3]/div[2]/span[1]")).click();
-    driver.findElement(By.xpath("//html/body/div[2]/div[5]/div/div[1]/div[2]/div[2]/div[4]/div[1]/input")).click();
-    driver.findElement(By.xpath("//html/body/div[2]/div[5]/div/div[1]/div[2]/div[9]/div/div[2]/button[1]")).click();
-    driver.findElement(By.xpath("//html/body/div[2]/div[5]/div/div[1]/div[2]/div[2]/div[7]/button")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[4]/div/div[1]")).click();
+    driver.findElement(By.xpath(".//*[@class='l-page_wrapper']/div[5]/div/div[1]/div[2]/div[2]/div[1]/div[2]/span[1]")).click();
+    driver.findElement(By.xpath(".//*[@class='l-page_wrapper']/div[5]/div/div[1]/div[2]/div[2]/div[3]/div[2]/span[1]")).click();
+    driver.findElement(By.xpath(".//*[@class='l-page_wrapper']/div[5]/div/div[1]/div[2]/div[2]/div[4]/div[1]/img")).click();
+    driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']/div[2]/button[1]")).click();
+    driver.findElement(By.xpath(".//*[@class='l-page_wrapper']/div[5]/div/div[1]/div[2]/div[2]/div[7]/button")).click();
     for (int second = 0;; second++) {
     	if (second >= 60) fail("timeout");
     	try { if (isElementPresent(By.xpath("//html/body/div[7]/div[1]/div[2]/div[4]/div[4]"))) break; } catch (Exception e) {}
@@ -60,7 +61,7 @@ public class TutuFlightTest {
     	Thread.sleep(1000);
     }
 
-    assertEquals("Выберите рейс в Санкт-Петербург для одного пассажира", driver.findElement(By.xpath("//html/body/div[7]/div[1]/div[2]/div[4]/div[4]")).getText());
+    assertTrue(driver.findElement(By.xpath("//html/body/div[7]/div[1]/div[2]/div[4]/div[4]")).isDisplayed());
   }
 
   @After
