@@ -11,7 +11,9 @@ import org.openqa.selenium.remote.*;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.support.ui.Select;
+import org.junit.runners.MethodSorters;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RegisterTest {
   private WebDriver driver;
   private String baseUrl;
@@ -39,13 +41,13 @@ public class RegisterTest {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
-  @Test
+  /*@Test
   public void testTutu() throws Exception {
     driver.get(baseUrl + "/");
     driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[4]/div/div[1]/div[2]")).click();
     driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[4]/div/div[2]/div[2]")).click();
     driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[4]/div/div[3]/div[2]")).click();
-  }
+  }*/
 
   @Test
   public void testRegister() throws Exception {
@@ -68,11 +70,41 @@ public class RegisterTest {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
-    Thread.sleep(2000);
-    driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[1]/div/div[2]/div[1]/div[3]/div/div/div/div[2]/div/a")).click();
-    Thread.sleep(2000);
+   // Thread.sleep(2000);
+   // driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[1]/div/div[2]/div[1]/div[3]/div/div/div/div[2]/div/a")).click();
   }
 
+  @Test
+  public void testRegisterDelete() throws Exception {
+    testRegister(); //in case of no cookies
+    driver.get(baseUrl + "/");
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//div[@class='l-page_wrapper']//div[1]/div/div[2]/div[1]/div[3]/div/div/div/div[2]/div/div/a")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (isElementPresent(By.xpath("//div[@class='j-menu-profile']/li/a"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    driver.findElement(By.xpath("//div[@class='j-menu-profile']/li/a")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (isElementPresent(By.xpath("//div[@class='b-personal']/div/div/a"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//div[@class='b-personal']/div/div/a")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (isElementPresent(By.xpath("//div[@class='b-user-login_new m-mrn b-user-login']/a[2]"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    Thread.sleep(2000);
+    driver.findElement(By.xpath("//div[@class='b-user-login_new m-mrn b-user-login']/a[2]")).click();
+    Thread.sleep(2000);
+  }
 
   @After
   public void tearDown() throws Exception {

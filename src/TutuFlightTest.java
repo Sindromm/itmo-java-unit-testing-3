@@ -42,7 +42,7 @@ public class TutuFlightTest {
 
   @Test
   public void testTutuFlight() throws Exception {
-    driver.get(baseUrl + "");
+    driver.get(baseUrl + "/");
     driver.findElement(By.xpath("//html/body/div[2]/div[5]/div/div[1]/div[2]/div[2]/div[1]/div[2]/span[1]")).click();
     driver.findElement(By.xpath("//html/body/div[2]/div[5]/div/div[1]/div[2]/div[2]/div[3]/div[2]/span[1]")).click();
     driver.findElement(By.xpath("//html/body/div[2]/div[5]/div/div[1]/div[2]/div[2]/div[4]/div[1]/input")).click();
