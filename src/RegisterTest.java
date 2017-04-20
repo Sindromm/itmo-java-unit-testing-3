@@ -31,7 +31,10 @@ public class RegisterTest {
     }
     else {
       ChromeOptions options = new ChromeOptions();
+<<<<<<< Updated upstream
       options.addArguments("load-extension=C:/Users/Fedor/Documents/itmo-java-unit-testing-3/lib/uBlock0.chromium");
+=======
+>>>>>>> Stashed changes
       DesiredCapabilities capabilities = new DesiredCapabilities();
       capabilities.setCapability(ChromeOptions.CAPABILITY, options);
       driver = new ChromeDriver(capabilities);
@@ -40,14 +43,6 @@ public class RegisterTest {
     baseUrl = "https://www.tutu.ru/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
-
-  /*@Test
-  public void testTutu() throws Exception {
-    driver.get(baseUrl + "/");
-    driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[4]/div/div[1]/div[2]")).click();
-    driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[4]/div/div[2]/div[2]")).click();
-    driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[4]/div/div[3]/div[2]")).click();
-  }*/
 
   @Test
   public void testRegister() throws Exception {
@@ -70,8 +65,6 @@ public class RegisterTest {
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
-   // Thread.sleep(2000);
-   // driver.findElement(By.xpath("//div[@class='l-page_wrapper']/div[1]/div/div[2]/div[1]/div[3]/div/div/div/div[2]/div/a")).click();
   }
 
   @Test
