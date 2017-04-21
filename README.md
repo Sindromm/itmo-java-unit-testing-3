@@ -16,7 +16,7 @@
 
 - [ ] Get bus ticket
 
-- [ ] Get train ticket
+- [x] Get train ticket
 
 - [ ] Get rating
 
