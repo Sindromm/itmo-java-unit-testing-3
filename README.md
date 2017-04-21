@@ -17,7 +17,7 @@
 - [x] Get suburban train station schedule
 - [x] Get suburban train tariffs
 
-- [ ] Get bus ticket
+- [x] Get bus ticket
 
 - [x] Get train ticket
 
