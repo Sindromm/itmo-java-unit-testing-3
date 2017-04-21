@@ -21,7 +21,6 @@ public class TutuFlightTest {
   @Before
   public void setUp() throws Exception {
     String os = System.getProperty("os.name");
-    System.out.println(os);
     if (os.equals("Linux")) {
         File pathToBinary = new File("/usr/bin/firefox");
         FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
