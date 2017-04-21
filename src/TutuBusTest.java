@@ -43,6 +43,12 @@ public class TutuBusTest {
   public void testTutuBus() throws Exception {
     driver.get(baseUrl + "");
     driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[4]/div/a[3]")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (driver.findElement(By.xpath("//*")).getText().matches("^[\\s\\S]*Укажите маршрут и дату поездки, чтобы узнать расписание и купить билеты на автобус[\\s\\S]*$")) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
     driver.findElement(By.xpath("//html/body/div[2]/div/div[2]/section/div/div[2]/form/div[1]/div[1]/input")).click();
     for (int second = 0;; second++) {
     	if (second >= 60) fail("timeout");
@@ -75,6 +81,7 @@ public class TutuBusTest {
     }
 
   }
+
 
   @After
   public void tearDown() throws Exception {

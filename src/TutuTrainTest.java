@@ -54,6 +54,43 @@ public class TutuTrainTest {
     	Thread.sleep(1000);
     }
 
+  }
+/*
+
+  @Test
+  public void testTutuTrain() throws Exception {
+    driver.get(baseUrl + "");
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[4]/div/div[2]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[2]/div[2]/div/form/div/div/div[1]/div/div[2]/span[1]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[2]/div[2]/div/form/div/div/div[3]/div/div[2]/span[1]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[2]/div[2]/div/form/div/div/div[4]/div/img")).click();
+    driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[4]/button[1]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[2]/div[2]/div/form/div/div/div[6]/button")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (isElementPresent(By.xpath("//*[@class='l-page_wrapper']/div[4]/div/div[1]/div[1]/div[1]/div/h1/span[1]"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+    assertTrue(driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[4]/div/div[1]/div[1]/div[1]/div/h1/span[1]")).isDisplayed());
+  }
+
+*/
+ /* @Test
+  public void testTutuTrain() throws Exception {
+    driver.get(baseUrl + "");
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[4]/div/div[2]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[2]/div[2]/div/form/div/div/div[1]/div/div[2]/span[1]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[2]/div[2]/div/form/div/div/div[3]/div/div[2]/span[1]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[2]/div[2]/div/form/div/div/div[4]/div/img")).click();
+    driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[4]/button[1]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[2]/div[2]/div/form/div/div/div[6]/button")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (isElementPresent(By.xpath("//*[@class='l-page_wrapper']/div[4]/div/div[1]/div[1]/div[1]/div/h1/span[1]"))) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
     for (int second = 0;; second++) {
     	if (second >= 60) fail("timeout");
     	try { if (driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[4]/div/div[1]/div[1]/div[1]/div/h1/span[1]")).isDisplayed()) break; } catch (Exception e) {}
@@ -62,7 +99,7 @@ public class TutuTrainTest {
 
     assertTrue(driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[4]/div/div[1]/div[1]/div[1]/div/h1/span[1]")).isDisplayed());
   }
-
+*/
   @After
   public void tearDown() throws Exception {
     driver.quit();
