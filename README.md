@@ -9,7 +9,7 @@
 
 - [x] Watch news
 
-- [ ] Get tour offer
+- [x] Get tour offer
 
 - [x] Get plane ticket
 
