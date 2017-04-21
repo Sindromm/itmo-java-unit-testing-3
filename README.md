@@ -10,7 +10,7 @@
 
 - [ ] Get tour offer
 
-- [ ] Get plane ticket
+- [x] Get plane ticket
 
 - [ ] Get suburban train info
 
