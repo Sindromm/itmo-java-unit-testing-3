@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="https://www.tutu.ru/" />
-<title>SuburbanTrain</title>
+<title>SuburbanTrainTariffs</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">SuburbanTrain</td></tr>
+<tr><td rowspan="1" colspan="3">SuburbanTrainTariffs</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -47,10 +47,21 @@
 	<td></td>
 </tr>
 <tr>
+	<td>click</td>
+	<td>//div[@class='l-wrapper b-stable_wrapper']/div[3]/div[2]/div[2]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[@class='content_etrain_price']</td>
+	<td></td>
+</tr>
+<tr>
 	<td>verifyText</td>
 	<td>//*</td>
-	<td>*Расписание электричек*</td>
+	<td>*Базовые тарифы*</td>
 </tr>
+
 </tbody></table>
 </body>
 </html>

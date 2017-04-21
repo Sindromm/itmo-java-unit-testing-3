@@ -12,7 +12,9 @@
 
 - [x] Get plane ticket
 
-- [ ] Get suburban train info
+- [x] Get suburban train info
+- [x] Get suburban train station schedule
+- [x] Get suburban train tariffs
 
 - [ ] Get bus ticket
 
