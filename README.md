@@ -9,7 +9,7 @@
 
 - [x] Watch news
 
-- [ ] Get tour offer
+- [x] Get tour offer
 
 - [x] Get plane ticket
 
@@ -23,7 +23,7 @@
 
 - [ ] Get rating
 
-- [ ] Get tariffs
+- [x] Get tariffs
 
 Add **test** cases as you see fit.
 
