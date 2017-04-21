@@ -1,9 +1,11 @@
 ## Checklist for test cases
 - [x] Registration
 - [x] Delete account
+
 - [ ] Orders control **will not test**
 - [ ] Change user setting **will not test**
 - [ ] User authorization **will not test**
+- [ ] Buy ticket **will not test**
 
 - [x] Feedback
 
@@ -11,19 +13,19 @@
 
 - [x] Get tour offer
 
-- [x] Get plane ticket
+- [x] Get plane ticket offer
 
 - [x] Get suburban train info
 - [x] Get suburban train station schedule
 - [x] Get suburban train tariffs
 
-- [x] Get bus ticket
+- [x] Get bus ticket offer
 
-- [x] Get train ticket
+- [x] Get train ticket offer
 
-- [ ] Get rating
+- [ ] Get plane rating
 
-- [x] Get tariffs
+- [x] Get suburban train tariffs
 
 Add **test** cases as you see fit.
 
