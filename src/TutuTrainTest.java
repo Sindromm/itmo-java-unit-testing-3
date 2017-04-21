@@ -12,7 +12,7 @@ import java.io.File;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.FirefoxBinary;
 
-public class TutuFlightTest {
+public class TutuTrainTest {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
