@@ -63,6 +63,25 @@ public class TutuFlightTest {
     assertTrue(driver.findElement(By.xpath("//html/body/div[7]/div[1]/div[2]/div[4]/div[4]")).isDisplayed());
   }
 
+  @Test
+  public void testFlightInvalidInput() throws Exception {
+    driver.get(baseUrl + "/");
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[4]/div/div[1]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[1]/div[2]/div[2]/div[1]/div[2]/span[1]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[1]/div[2]/div[2]/div[3]/div[2]/span[2]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[1]/div[2]/div[2]/div[4]/div[1]/img")).click();
+    driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[2]/button[1]")).click();
+    driver.findElement(By.xpath("//*[@class='l-page_wrapper']/div[5]/div/div[1]/div[2]/div[2]/div[7]/button")).click();
+    for (int second = 0;; second++) {
+    	if (second >= 60) fail("timeout");
+    	try { if (driver.findElement(By.xpath("//*")).getText().matches("^[\\s\\S]*Город прилета совпадает[\\s\\S]*$")) break; } catch (Exception e) {}
+    	Thread.sleep(1000);
+    }
+
+  }
+
+
+
   @After
   public void tearDown() throws Exception {
     driver.quit();
