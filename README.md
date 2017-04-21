@@ -5,9 +5,9 @@
 - [ ] Change user setting **will not test**
 - [ ] User authorization **will not test**
 
-- [ ] Feedback
+- [x] Feedback
 
-- [ ] Watch news
+- [x] Watch news
 
 - [ ] Get tour offer
 
