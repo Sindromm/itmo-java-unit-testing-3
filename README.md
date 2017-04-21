@@ -11,6 +11,8 @@
 
 - [x] Watch news
 
+- [x] Get excursion list **failed**
+
 - [x] Get tour offer
 
 - [x] Get plane ticket offer
@@ -26,6 +28,8 @@
 - [x] Get plane rating
 
 - [x] Get suburban train tariffs
+
+- [x] Set to English
 
 Add **test** cases as you see fit.
 
