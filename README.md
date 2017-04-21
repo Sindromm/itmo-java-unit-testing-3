@@ -23,7 +23,7 @@
 
 - [x] Get train ticket offer
 
-- [ ] Get plane rating
+- [x] Get plane rating
 
 - [x] Get suburban train tariffs
 
