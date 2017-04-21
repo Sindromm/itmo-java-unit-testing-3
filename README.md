@@ -23,7 +23,7 @@
 
 - [ ] Get rating
 
-- [ ] Get tariffs
+- [x] Get tariffs
 
 Add **test** cases as you see fit.
 
