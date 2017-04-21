@@ -3,6 +3,7 @@
 - [x] Delete account
 - [ ] Orders control **will not test**
 - [ ] Change user setting **will not test**
+- [ ] User authorization **will not test**
 
 - [ ] Feedback
 
